@@ -1,0 +1,17 @@
+{
+  "name": "hotel-app",
+  "version": "1.0.0",
+  "description": "hotel room reservation & management web application",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TempleOkosun/hotel-app.git"
+  },
+  "author": "Temple",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TempleOkosun/hotel-app/issues"
+  }
+}
