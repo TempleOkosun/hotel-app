@@ -6,7 +6,7 @@
     "lint": "prettier --check .",
     "format": "prettier --write .",
     "success-message": "echo Thanks for contributing $GIT_AUTHOR_NAME",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress open"
   },
   "repository": {
     "type": "git",
