@@ -1,0 +1,38 @@
+{
+  "name": "hotel-app",
+  "version": "1.0.0",
+  "description": "hotel room reservation & management web application",
+  "scripts": {
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "success-message": "echo Thanks for contributing $GIT_AUTHOR_NAME",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && git add -A .",
+      "post-checkout": "npm run success message"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TempleOkosun/hotel-app.git"
+  },
+  "author": "Temple",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TempleOkosun/hotel-app/issues"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2"
+  }
+}
