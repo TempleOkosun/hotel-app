@@ -4,10 +4,10 @@
     "es2021": true
   },
   "extends": [
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
     "airbnb",
     "airbnb/hooks",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
   "parserOptions": {
@@ -20,5 +20,17 @@
   "plugins": [
     "react",
     "prettier"
-  ]
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
+  }
 }

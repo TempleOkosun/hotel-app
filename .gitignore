@@ -102,3 +102,14 @@ dist
 
 # TernJS port file
 .tern-port
+/.idea/codeStyles/Project.xml
+/.idea/vcs.xml
+/.idea/aws.xml
+/.idea/.gitignore
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/jsLinters/eslint.xml
+/.idea/hotel-app.iml
+/.idea/jsLibraryMappings.xml
+/.idea/modules.xml
+/.idea/prettier.xml
+/.idea/inspectionProfiles/Project_Default.xml
