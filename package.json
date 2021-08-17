@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "hotel room reservation & management web application",
   "scripts": {
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && git add -A ."
+    }
   },
   "repository": {
     "type": "git",
