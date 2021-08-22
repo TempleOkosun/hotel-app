@@ -6,7 +6,8 @@
     "lint": "prettier --check .",
     "format": "prettier --write .",
     "success-message": "echo Thanks for contributing $GIT_AUTHOR_NAME",
-    "test": "cypress open"
+    "test": "cypress open",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^7.0.1",
+    "husky": "^7.0.0",
     "prettier": "^2.3.2"
   }
 }
