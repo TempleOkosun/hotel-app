@@ -10,12 +10,14 @@ body {
   border-radius: 5px;
 }
 
-h1 {
-  font-size: 20px;
+.big-img {
+  height: 400px;
+  width: 100%;
+  border-radius: 5px;
 }
 
-.App {
-  text-align: left;
+h1 {
+  font-size: 20px;
 }
 
 .btn {
@@ -24,13 +26,13 @@ h1 {
   box-shadow: none;
 }
 
+button {
+  float: right;
+}
+
 .box-shadow {
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   margin-top: 20px;
   border-radius: 5px;
   padding: 20px;
-}
-
-button {
-  float: right;
 }
