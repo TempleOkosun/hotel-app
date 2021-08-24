@@ -13,7 +13,7 @@ function Room({ room }) {
   const handleShow = () => setShow(true)
 
   return (
-    <div className="row box-shadow text-left">
+    <div className="row box-shadow">
       <div className="col-md-4">
         <img src={room.image_urls[0]} alt="" className="small-img" />
       </div>
@@ -25,7 +25,6 @@ function Room({ room }) {
 
         <div>
           <button className="btn btn-primary" onClick={handleShow}>
-            {' '}
             View Details
           </button>
         </div>
@@ -39,8 +38,7 @@ function Room({ room }) {
           <Carousel prevLabel="" nextLabel="">
             {room.image_urls.map((url) => {
               return (
-                // eslint-disable-next-line react/jsx-key
-                <Carousel.Item>
+                <Carousel.Item key={room._id}>
                   <img className="d-block w-100 big-img" src={url} alt="" />
                 </Carousel.Item>
               )
@@ -62,6 +60,7 @@ export default Room
 
 Room.propTypes = {
   room: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
     image_urls: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     max_count: PropTypes.number.isRequired,
