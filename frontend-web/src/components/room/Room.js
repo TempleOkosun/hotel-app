@@ -17,7 +17,7 @@ function Room({ room }) {
       <div className="col-md-4">
         <img src={room.image_urls[0]} alt="" className="small-img" />
       </div>
-      <div className="col-md-7 text-left">
+      <div className="col-md-7">
         <h1>{room.name}</h1>
         <p>Max Count: {room.max_count}</p>
         <p>Phone Number: {room.phone_number}</p>
