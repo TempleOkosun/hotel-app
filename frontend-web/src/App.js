@@ -1,9 +1,8 @@
 import './App.css'
 import Navbar from './components/navbar/Navbar'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import HomeScreen from './pages/HomeScreen'
-import BookingScreen from './pages/BookingScreen'
-import PropTypes from 'prop-types'
+import HomeScreen from './pages/home/HomeScreen'
+import BookingScreen from './pages/booking/BookingScreen'
 
 function App() {
   return (

@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
 // import components
-import Room from '../components/room/Room'
+import Room from '../../components/room/Room'
+import Loader from '../../components/spinners/Loader'
+import Error from '../../components/spinners/Error'
 
 function HomeScreen() {
   const [rooms, setRooms] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState()
+  const [loading, setLoading] = useState(false)
 
   useEffect(async () => {
     try {
+      setLoading(true)
       const resRooms = await axios.get('/api/rooms/getallrooms')
       setRooms(resRooms.data)
       setLoading(false)
     } catch (error) {
-      setError(true)
       console.log(error)
       setLoading(false)
     }
@@ -25,17 +25,17 @@ function HomeScreen() {
     <div className="container">
       <div className="row justify-content-center mt-5">
         {loading ? (
-          <h1>Loading...</h1>
-        ) : error ? (
-          <h1>Error...</h1>
-        ) : (
+          <Loader />
+        ) : rooms.length > 0 ? (
           rooms.map((room) => {
             return (
-              <div className="col-md-9 mt-2" key={room._id}>
+              <div className="col-md-9 mt-3" key={room._id}>
                 <Room room={room} />
               </div>
             )
           })
+        ) : (
+          <Error />
         )}
       </div>
     </div>
