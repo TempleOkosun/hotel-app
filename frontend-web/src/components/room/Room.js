@@ -6,6 +6,7 @@ import { Modal, Button, Carousel } from 'react-bootstrap'
 
 // Css
 import './_Room.css'
+import { Link } from 'react-router-dom'
 
 function Room({ room }) {
   const [show, setShow] = useState(false)
@@ -24,9 +25,12 @@ function Room({ room }) {
         <p>Type: {room.type}</p>
 
         <div>
-          <button className="btn btn-primary" onClick={handleShow}>
+          <button className="btn btn-primary m-2" onClick={handleShow}>
             View Details
           </button>
+          <Link to={`/book/${room._id}`}>
+            <button className="btn btn-primary m-2">Book Now</button>
+          </Link>
         </div>
       </div>
 
@@ -66,6 +70,7 @@ Room.propTypes = {
     max_count: PropTypes.number.isRequired,
     phone_number: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
+    rent_per_day: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
 }

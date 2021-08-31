@@ -6,14 +6,13 @@ import Room from '../components/room/Room'
 
 function HomeScreen() {
   const [rooms, setRooms] = useState([])
-  const [loading, setLoading] = useState()
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState()
 
   useEffect(async () => {
     try {
-      setLoading(true)
-      const data = (await axios.get('/api/rooms/getallrooms')).data
-      setRooms(data)
+      const resRooms = await axios.get('/api/rooms/getallrooms')
+      setRooms(resRooms.data)
       setLoading(false)
     } catch (error) {
       setError(true)
@@ -28,7 +27,7 @@ function HomeScreen() {
         {loading ? (
           <h1>Loading...</h1>
         ) : error ? (
-          <h1>Error</h1>
+          <h1>Error...</h1>
         ) : (
           rooms.map((room) => {
             return (
