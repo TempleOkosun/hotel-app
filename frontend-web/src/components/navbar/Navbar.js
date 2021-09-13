@@ -22,12 +22,12 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="/register">
+              <a className="nav-link" href={'/register'}>
                 Register
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/login">
+              <a className="nav-link" href={'/login'}>
                 Login
               </a>
             </li>

@@ -6,8 +6,7 @@ import './_Loader.css'
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 
 function Loader() {
-  let [loading, setLoading] = useState(true)
-  let [color, setColor] = useState('#ffffff')
+  const [loading, setLoading] = useState(true)
 
   return (
     <div className="center-loader">
