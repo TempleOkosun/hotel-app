@@ -1,11 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function Success() {
+function Success({ message }) {
   return (
     <div className="alert alert-success" role="alert">
-      This is a success alert
+      {message}
     </div>
   )
 }
 
 export default Success
+
+Success.propTypes = {
+  message: PropTypes.string.isRequired,
+}

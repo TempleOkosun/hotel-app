@@ -35,7 +35,7 @@ function HomeScreen() {
             )
           })
         ) : (
-          <Error />
+          <Error message="Something went wrong" />
         )}
       </div>
     </div>

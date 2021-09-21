@@ -1,11 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function Error() {
+function Error({ message }) {
   return (
     <div className="alert alert-danger" role="alert">
-      Something went wrong
+      {message}
     </div>
   )
 }
 
 export default Error
+
+Error.propTypes = {
+  message: PropTypes.string.isRequired,
+}
