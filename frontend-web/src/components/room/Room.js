@@ -8,7 +8,7 @@ import { Modal, Button, Carousel } from 'react-bootstrap'
 import './_Room.css'
 import { Link } from 'react-router-dom'
 
-function Room({ room }) {
+function Room({ room, fromDate, toDate }) {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -27,7 +27,7 @@ function Room({ room }) {
           <button className="btn btn-primary m-2" onClick={handleShow}>
             View Details
           </button>
-          <Link to={`/book/${room._id}`}>
+          <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
             <button className="btn btn-primary m-2">Book Now</button>
           </Link>
         </div>
@@ -71,4 +71,6 @@ Room.propTypes = {
     rent_per_day: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
+  fromDate: PropTypes.string.isRequired,
+  toDate: PropTypes.string.isRequired,
 }

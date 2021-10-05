@@ -4,12 +4,19 @@ import { useParams } from 'react-router-dom'
 import './_BookingScreen.css'
 import Loader from '../../components/spinners/Loader'
 import Error from '../../components/spinners/Error'
+import moment from 'moment'
 
 function BookingScreen() {
   const [room, setRoom] = useState(null)
   const [loading, setLoading] = useState(false)
 
-  const { room_id } = useParams()
+  const { room_id, fromDate, toDate } = useParams()
+  // const formattedFromDate = moment(fromDate, 'DD-MM-YYYY')
+  // const formattedToDate = moment(toDate, 'DD-MM-YYYY')
+  // // const totalDays = moment.duration(formattedToDate.diff(formattedFromDate)).asDays() + 1
+  const totalDays =
+    moment.duration(moment(toDate, 'DD-MM-YYYY').diff(moment(fromDate, 'DD-MM-YYYY'))).asDays() + 1
+
   useEffect(async () => {
     try {
       setLoading(true)
@@ -45,8 +52,8 @@ function BookingScreen() {
               <div>
                 <b>
                   <p>Name: </p>
-                  <p>From Date: </p>
-                  <p>To Date: </p>
+                  <p>From Date: {fromDate} </p>
+                  <p>To Date: {toDate} </p>
                   <p>Max count: {room.max_count} </p>
                 </b>
               </div>
@@ -55,7 +62,7 @@ function BookingScreen() {
                 <h1>Amount</h1>
                 <hr />
                 <b>
-                  <p>Total days:</p>
+                  <p>Total days: {totalDays}</p>
                   <p>Rent per day: {room.rent_per_day}</p>
                   <p>Total amount:</p>
                 </b>
@@ -68,7 +75,7 @@ function BookingScreen() {
           </div>
         </div>
       ) : (
-        <Error />
+        <Error message="Something went wrong" />
       )}
     </div>
   )
