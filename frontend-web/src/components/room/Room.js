@@ -24,12 +24,15 @@ function Room({ room, fromDate, toDate }) {
         <p>Type: {room.type}</p>
 
         <div>
+          {fromDate && toDate && (
+            <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
+              <button className="btn btn-primary m-2">Book Now</button>
+            </Link>
+          )}
+
           <button className="btn btn-primary m-2" onClick={handleShow}>
             View Details
           </button>
-          <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
-            <button className="btn btn-primary m-2">Book Now</button>
-          </Link>
         </div>
       </div>
 

@@ -9,6 +9,7 @@ import moment from 'moment'
 function BookingScreen() {
   const [room, setRoom] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [totalAmount, setTotalAmount] = useState()
 
   const { room_id, fromDate, toDate } = useParams()
   // const formattedFromDate = moment(fromDate, 'DD-MM-YYYY')
@@ -28,11 +29,28 @@ function BookingScreen() {
         },
       })
       setRoom(resRoom.data)
+      setTotalAmount(totalDays * resRoom.data.rent_per_day)
       setLoading(false)
     } catch (error) {
       setLoading(false)
     }
   }, [])
+
+  async function bookRoom(e) {
+    e.preventDefault()
+    const bookingDetails = {
+      room,
+      userId: JSON.parse(localStorage.getItem('currentUser')),
+      fromDate,
+      toDate,
+      totalDays,
+      totalAmount,
+    }
+
+    try {
+      const result = await axios.post('/api/bookings/bookroom', bookingDetails)
+    } catch (error) {}
+  }
 
   return (
     <div className="m-5">
@@ -64,12 +82,15 @@ function BookingScreen() {
                 <b>
                   <p>Total days: {totalDays}</p>
                   <p>Rent per day: {room.rent_per_day}</p>
-                  <p>Total amount:</p>
+                  <p>Total amount: {totalAmount}</p>
                 </b>
               </div>
 
               <div>
-                <button className="btn btn-primary mt-5"> Pay Now</button>
+                <button className="btn btn-primary mt-5" onClick={bookRoom}>
+                  {' '}
+                  Pay Now
+                </button>
               </div>
             </div>
           </div>

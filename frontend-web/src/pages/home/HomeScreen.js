@@ -15,8 +15,8 @@ function HomeScreen() {
   const [rooms, setRooms] = useState([])
   const [loading, setLoading] = useState(false)
 
-  const [fromDate, setFromDate] = useState('')
-  const [toDate, setToDate] = useState('')
+  const [fromDate, setFromDate] = useState(null)
+  const [toDate, setToDate] = useState(null)
 
   useEffect(async () => {
     try {
